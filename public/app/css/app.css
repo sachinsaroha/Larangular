@@ -1,0 +1,133 @@
+/* app css stylesheet */
+body {
+    background-color: #11111;
+}
+
+.container {
+    width: 1146px;
+}
+
+.resultsTable {
+    width: 100%;
+}
+
+.resultsTable tr {
+    background-color: #e0e0e0;
+}
+
+.resultsTable td {
+    padding-left: 10px;
+}
+
+.info-hover:hover {
+    background-color: #d9edf7;
+}
+
+.modal-huge {
+    position: absolute;
+    top: 10px;
+    left: 35%;
+    height: 800px;
+}
+
+.form-inline input, 
+.form-inline textarea {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; 
+    -webkit-box-sizing:border-box;
+    height: 30px;
+}
+
+.box-sizing {
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+.table-allow-overflow {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+table.customer-form input,
+table.customer-form select,
+table.customer-form button {
+    margin:0px;
+    padding:0px;
+    line-height: 16px;
+    height: 16px;
+}
+
+.flat-select {
+    margin:0px;
+    padding:0px;
+    line-height: 22px;
+    height: 22px;
+}
+
+.checkbox input {
+    height: auto;
+    line-height: auto;
+}
+
+.nav-tabs > li > a {
+    background-color: lightgrey;
+}
+
+.admin-panel {
+    background-color:#ffffff; 
+}
+
+.admin-panel-header {
+    padding: 3px;
+    background-color: #f4e0c6;
+}
+
+.well, .alert-block {
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+h5 {
+    margin: 0 10px 0 0;
+}
+
+.nav-tabs {
+    margin-bottom: 4px;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif  !important;
+    font-size: 12px;
+    line-height: 18px !important;
+}
+
+.plain-input {
+    padding: 1px 0 1px 0 !important;
+    margin-bottom: 0px !important;
+    font-size: 12px !important;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* Legacy Styles */
+.para-heading {
+    font-weight: bold;
+    font-size: 11pt;
+    color: #666;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.tglbutton {
+    background:transparent url(/images_ord/tgl_button.gif) repeat scroll 0%;
+    border:0pt solid;
+    color:#003399;
+    display:inline;
+    font-size:11px;
+    height:21px;
+    padding:0pt;
+}
+/* Legacy Styles */
