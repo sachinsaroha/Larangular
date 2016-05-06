@@ -1,0 +1,28 @@
+
+
+
+<p>Search Customer</p>
+
+	
+ 	<input type="text" ng-model="searchTerm">
+ 	<input type="submit" ng-show='!toggle' class="btn btn-info" ng-click='show()' value='Show'>
+ 	<input type="submit" ng-show='toggle' class="btn btn-info" ng-click='hide()' value='Hide'>
+
+ 	<table class="resultsTable table-striped">
+ 		<tr ng-show='toggle' ng-repeat = "customer in customers | orderBy : 'name' | filter:searchTerm ">
+ 		<td>
+ 			{{customer.name}}
+ 		</td>
+ 		</tr>	
+
+ 	<tr>
+ 		<td>	
+ 		<form ng-submit="addCustomer()">
+	 		<input type="text" ng-model="name">
+			<input type="submit" class="btn btn-success" value='Add'>
+		</form>	
+		</td>
+	</tr>	
+	</table>	
+
+	
