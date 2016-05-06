@@ -16,4 +16,9 @@ Route::get('/', function () {
 });
 
 //CRUD
-Route::get('/customers', [ 'as' => 'customers', 'uses' =>'CustomerController@index']);
+//Route::get('/customers', [ 'as' => 'customers', 'uses' =>'customerController@index']);
+
+Route::get('/customers/{id?}', 'customerController@index');
+Route::post('/customers', 'customerController@store');
+Route::post('/customers/{id}', 'customerController@update');
+Route::delete('/customers/{id}', 'customerController@destroy');

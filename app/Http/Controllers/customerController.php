@@ -13,11 +13,17 @@ class customerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        $customers = \App\Customer::all();
-        //return view('customers')->with('customers', $customers);\
-        return $customers;
+        if ($id == null) {
+            return \App\Customer::orderBy('id', 'asc')->get();
+        } else {
+            return $this->show($id);
+        }
+
+        //$customers = \App\Customer::all();
+        //header('Access-Control-Allow-Origin: *');
+        //return $customers;
     }
 
     /**
@@ -38,7 +44,11 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cust = new \App\Customer;
+        $cust->name = $request->input('name');
+        $cust->email = $request->input('email');
+        $cust->save();
+        return 'Customer record successfully created with id ' . $cust->id;
     }
 
     /**
@@ -49,7 +59,7 @@ class customerController extends Controller
      */
     public function show($id)
     {
-        //
+        return \App\Customer::find($id);
     }
 
     /**
@@ -72,7 +82,11 @@ class customerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cust = \App\Customer::find($id);
+        $cust->name = $request->input('name');
+        $cust->email = $request->input('email');
+        $cust->save();
+        return 'Customer record successfully updated with id ' . $cust->id;
     }
 
     /**
@@ -81,8 +95,10 @@ class customerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+ 
+    public function destroy(Request $request, $id) {
+        $cust = \App\Customer::find($id);
+        $cust->delete();
+        return "Customer record successfully deleted #" . $request->input('id');
     }
 }

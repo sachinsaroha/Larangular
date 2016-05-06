@@ -8,7 +8,7 @@
 <body>
 
 	<!-- Angular -->
-	<script type="text/javascript" src="library/angular.min.js"></script> 
+	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 
 	<!-- Bootstrap -->
@@ -25,28 +25,15 @@
 	<!-- Navigation -->
 	<div>
 		<ul class="nav nav-tabs">
- 	 		<li role="presentation" class="active"><a href="#">Home</a></li>
-  			<li role="presentation"><a href="#">Add Customer</a></li>
-  		
+  			<li ng-class =  "{
+                                active: (path() == '/search')
+                          	 }"><a href="#/search">Search</a></li>
+            <li ng-class =  "{
+                                active: (path() == '/addCust')
+                             }"><a href="#/addCust">Add Customer</a>
+        	</li>
 		</ul>
 	</div>
-<!--
- 		<div ng-controller="myController">
-
- 		<input type="submit" ng-show='!toggle' ng-click='show()' value='Show'>
- 		<input type="text" ng-model="searchTerm">
- 		<input type="submit" ng-show='toggle' ng-click='hide()' value='Hide'>
-
- 		<p ng-show='toggle' ng-repeat = "customer in customers | orderBy : 'name' | filter:searchTerm ">
- 			{{customer.name}}
- 		</p>
-
-
- 		<form ng-submit="addCustomer()">
-	 		<input type="text" ng-model="name">
-			<input type="submit" value='Add'> 		
-		</form>	
--->
 
 	
 		<div class="container" ng-view></div>

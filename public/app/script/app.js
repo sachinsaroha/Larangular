@@ -1,50 +1,23 @@
-'use strict';
-var app = angular.module('myApp', ['ngRoute']);
+//'use strict';
+var myApp = angular.module('myApp', ['ngRoute']);
 
-app.config(['$routeProvider', function($routeProvider) {
+myApp.config(['$routeProvider', function($routeProvider) {
 
-    $routeProvider.
-    when('/addCust', {
-      pageTitle: 'Customers',
-      templateUrl: 'template/addCustomer.html',
-      controller : 'addCustomerCtrl'
+    $routeProvider
+    .when('/search', { 
+    	pageTitle: 'Search', 
+    	templateUrl: 'template/searchCustomer.html',
+      	controller : 'searchCustomerCtrl'
+    })
+    .when('/addCust', { 
+    	pageTitle: 'addCustomer', 
+    	templateUrl: 'template/addCustomer.html',
+      	controller : 'addCustomerCtrl'
     })
     .otherwise({
-      redirectTo: '/addCust'
+      redirectTo: '/search'
     });
+
 }]);
     
 
-/*
-$routeProvider.when('/addCust', {templateUrl: 'template/addCustomer.html', 
-								 controller: function($scope){
-								 	$scope.something = 'hi';
-								 }
-								});
-
-*/
-
-
-
-/*
-
-app.controller('myController', [ '$scope', function($scope){
-	$scope.toggle= true;
-	$scope.show = function(){
-		$scope.toggle = true; 
-	};
-	$scope.hide = function(){
-		$scope.toggle = false; 
-	};
-	$scope.customers = [{'name':'Ross'},
-						{'name':'Chandler'},	
-						{'name':'Joey'}
-					   ];
-	$scope.addCustomer = function(){
-		$scope.customers.push({name:$scope.name});
-		$scope.name='';
-
-	};
-}]);
-
-*/
