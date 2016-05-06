@@ -63,7 +63,7 @@ angular
         if (modalstate === 'edit'){
             url += "/" + id;
         }
-        
+         
         $http({
             method: 'POST',
             url: url,
